@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f8f6">
+  <meta name="description" content="NORD BOUNCE — a Scandinavian arcade game by KONHAGEN GAMES. 100 levels, five worlds, and Endless mode.">
+  <link rel="icon" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <title>NORD BOUNCE | KONHAGEN GAMES</title>
+</head>
+<body>
+  <div id="app">
+    <header class="sitebar"><span class="brand">KONHAGEN GAMES</span><button class="link-button" id="theme-button" aria-label="Toggle light or dark theme">☾ <span class="desktop-only">APPEARANCE</span></button></header>
+    <main>
+      <section id="home" class="screen active">
+        <div class="home-intro">
+          <div class="brand-mark" aria-hidden="true"><div class="mark-blocks"><i></i><i></i><i></i></div><div class="mark-ball"></div></div>
+          <div class="eyebrow">THE NORDIC ARCADE</div>
+          <h1>NORD BOUNCE</h1><p>Aim. Bounce. Repeat.</p>
+        </div>
+        <div class="home-menu">
+          <button id="start-journey" class="primary big">CONTINUE JOURNEY <span>→</span></button>
+          <button id="start-endless" class="outline big">PLAY ENDLESS <span>↗</span></button>
+          <button data-open="missions" class="outline big">MISSIONS & WORLDS <span>100 LEVELS</span></button>
+          <button data-open="shop" class="outline big">SHOP <span>↗</span></button>
+        </div>
+        <div class="home-stats"><div><strong id="home-level">1 / 100</strong><small>JOURNEY</small></div><div><strong id="home-best">0</strong><small>BEST ROUND</small></div><div><strong id="home-coins">0</strong><small>COINS</small></div></div>
+        <p class="home-footer">MADE IN COPENHAGEN · KONHAGEN GAMES</p>
+      </section>
+      <section id="game" class="screen">
+        <div class="game-shell">
+          <div class="game-top"><div class="game-left"><button id="pause-btn" class="round-button" aria-label="Pause game">Ⅱ</button><div><small>BEST</small><strong id="game-best">0</strong></div></div><div class="game-center"><strong id="game-round">1</strong><small id="game-mode-caption">LEVEL</small></div><div class="game-right"><strong id="game-coins">0</strong><small>COINS</small></div></div>
+          <div id="game-world-name" class="game-world">NORDIC DAWN · LEVEL 1 / 20</div>
+          <div id="power-bar" class="power-bar"></div>
+          <div class="court"><canvas id="game-canvas" aria-label="NORD BOUNCE game board" tabindex="0"></canvas></div>
+          <div id="game-help" class="game-help">DRAG TO AIM · RELEASE TO SHOOT</div>
+          <div class="game-footer">KONHAGEN GAMES</div>
+        </div>
+        <div id="game-overlay" class="overlay hidden"><div class="modal"><div class="eyebrow" id="overlay-eyebrow">NORD BOUNCE</div><h2 id="overlay-title">PAUSED</h2><p id="overlay-text">Your game is paused.</p><div id="overlay-actions"></div></div></div>
+      </section>
+      <section id="missions" class="screen content-screen"><div class="section-head"><button class="back" data-open="home">←</button><span>THE JOURNEY</span><span class="head-spacer"></span></div><h2>Progress, beautifully made.</h2><p class="lead">Five worlds. One hundred levels. Win to unlock the next.</p><div class="progress-header"><span>YOUR JOURNEY</span><strong id="mission-count">0 / 100</strong></div><div class="progress-track"><div id="journey-progress"></div></div><div id="worlds"></div><div class="mission-section"><div class="eyebrow">YOUR OBJECTIVES</div><h3>Small steps, big progress.</h3><div id="mission-cards"></div></div></section>
+      <section id="shop" class="screen content-screen"><div class="section-head"><button class="back" data-open="home">←</button><span>SHOP</span><span id="shop-coins">0 ◎</span></div><h2>Find your signature.</h2><p class="lead">Quiet colors, considered details. Your next favorite ball.</p><div class="shop-tabs"><button id="tab-balls" class="selected">SKINS</button><button id="tab-powers">POWER-UPS</button></div><div id="shop-content"></div><div class="shop-note">SIGNATURE COLLECTION · Exclusive web preview. Real-money purchases are not enabled on GitHub Pages.</div></section>
+    </main>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
